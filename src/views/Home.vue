@@ -4,7 +4,10 @@
 
   <ul class="list">
     <li>
-      <router-link to="/modal">dummy</router-link>
+      <router-link to="/modal">Modal</router-link>
+    </li>
+    <li>
+      <router-link to="/sort">Sort</router-link>
     </li>
   </ul>
 </div>
@@ -22,6 +25,10 @@ ul {
   padding: 0 0 0 20px;
 
   > li {
+    &:not(:first-of-type) {
+      margin-top: 4px;
+    }
+
     > a {
       display: block;
       position: relative;

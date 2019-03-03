@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Modal from '@/store/Modules/modal.js'
+import modal from '@/store/Modules/modal.js'
+import sort from '@/store/Modules/sort.js'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    Modal
+    modal,
+    sort
   }
 })
 

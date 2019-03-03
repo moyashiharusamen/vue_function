@@ -1,11 +1,12 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <h1><router-link to="/">Vue Stydy</router-link></h1>
+      <h1><router-link to="/">Vue Study</router-link></h1>
 
       <nav>
         <ul>
           <li><router-link to="/modal">modal</router-link></li>
+          <li><router-link to="/sort">sort</router-link></li>
         </ul>
       </nav>
     </div>
@@ -35,6 +36,19 @@ export default {
   h1 {
     font-size: 24px;
     color: #F9FBE7;
+  }
+
+  nav {
+    > ul {
+      display: flex;
+      justify-content: center;
+
+      > li {
+        &:not(:first-of-type) {
+          margin-left: 20px;
+        }
+      }
+    }
   }
 
   a {
