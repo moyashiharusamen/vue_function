@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <the-header />
+
     <div class="content">
       <div class="content-inner">
-        <the-header />
         <router-view/>
       </div>
     </div>
@@ -25,6 +26,11 @@ export default {
     background: #eee;
   }
 
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   a {
     text-decoration: none;
     transition: .5s;
@@ -45,8 +51,16 @@ export default {
     list-style: none;
   }
 
+  .content {
+    padding: 40px 0;
+  }
+
   .content-inner {
     width: 1000px;
     margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 20px;
   }
 </style>
