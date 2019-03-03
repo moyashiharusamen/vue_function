@@ -1,0 +1,35 @@
+.button-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:not(:first-of-type) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.button {
+  font-size: 14px;
+}
+
+.button-primary {
+  min-width: 100px;
+  padding: 10px 5px;
+  border: 2px solid #036;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.button-secondary {
+  min-width: 100px;
+  padding: 10px 5px;
+  border: 2px solid #0e1318;
+  border-radius: 4px;
+  font-size: 14px;
+}

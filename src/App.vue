@@ -17,6 +17,7 @@ import 'normalize.css'
 import TheHeader from '@/components/Header'
 import './assets/scss/reset.scss'
 import './assets/scss/transition.scss'
+import './assets/scss/button.scss'
 
 export default {
   components: {

@@ -4,7 +4,7 @@
 
   <ul class="list">
     <li>
-      <router-link to="/">dummy</router-link>
+      <router-link to="/modal">dummy</router-link>
     </li>
   </ul>
 </div>

@@ -5,7 +5,7 @@
 
       <nav>
         <ul>
-          <li><router-link to="/">dummy</router-link></li>
+          <li><router-link to="/modal">modal</router-link></li>
         </ul>
       </nav>
     </div>
@@ -21,6 +21,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   padding: 5px 0 10px;
+  background: #036;
   border-bottom: 1px solid #333;
 
   .header-inner {
@@ -33,6 +34,12 @@ export default {
 
   h1 {
     font-size: 24px;
+    color: #F9FBE7;
+  }
+
+  a {
+    /*color: #80CBC4;*/
+    color: #F9FBE7;
   }
 }
 </style>
