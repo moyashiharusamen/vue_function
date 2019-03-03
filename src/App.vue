@@ -4,7 +4,9 @@
 
     <div class="content">
       <div class="content-inner">
-        <router-view/>
+        <transition name="content">
+          <router-view/>
+        </transition>
       </div>
     </div>
   </div>
@@ -14,6 +16,7 @@
 import 'normalize.css'
 import TheHeader from '@/components/Header'
 import './assets/scss/reset.scss'
+import './assets/scss/transition.scss'
 
 export default {
   components: {
