@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <h1>Vue Stydy</h1>
+      <h1><router-link to="/">Vue Stydy</router-link></h1>
 
       <nav>
         <ul>
