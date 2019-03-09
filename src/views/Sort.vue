@@ -5,9 +5,21 @@
     <table class="sort-table">
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Text</th>
-          <th @click="ascList">Number</th>
+          <th
+            @click="sorted('date')"
+            @keyup.enter.space="sorted('date')"
+            tabindex="0"
+          >Date</th>
+          <th
+            @click="sorted('text')"
+            @keyup.enter.space="sorted('text')"
+            tabindex="0"
+          >Text</th>
+          <th
+            @click="sorted('price')"
+            @keyup.enter.space="sorted('price')"
+            tabindex="0"
+          >Price</th>
         </tr>
       </thead>
 
@@ -15,7 +27,7 @@
         <tr v-for="item in list" :key="item.id">
           <td>{{ item.date }}</td>
           <td>{{ item.text }}</td>
-          <td>{{ item.number }}</td>
+          <td>{{ item.price }}</td>
         </tr>
       </transition-group>
     </table>
@@ -35,7 +47,7 @@ export default {
     ...mapGetters(['list'])
   },
   methods: {
-    ...mapActions(['ascList'])
+    ...mapActions(['sorted'])
   }
 }
 </script>
@@ -46,7 +58,6 @@ export default {
 
   thead {
     display: block;
-    background: #1f8fff;
     color: #fff;
 
     > tr {
@@ -59,9 +70,15 @@ export default {
         justify-content: center;
         width: calc(100% / 3);
         padding: 20px 10px 18px;
+        background: #1f8fff;
         font-size: 20px;
         font-weight: normal;
         cursor: pointer;
+
+        &:hover,
+        &:focus {
+          opacity: .8;
+        }
 
         &:after {
           content: "▼";
@@ -95,5 +112,15 @@ export default {
       }
     }
   }
+}
+
+.sort-leave-active {
+  transition: .5s;
+}
+.sort-leave-to {
+  opacity: 0;
+}
+.sort-move {
+  transition: .5s;
 }
 </style>
