@@ -7,20 +7,20 @@
   <transition name="modal">
     <div class="modal modal-overlay" v-if="modalFlag" @click.self="closeModal">
       <transition name="content">
-        <div class="modal-window" v-if="!modalNextContentFlag">
+        <div class="modal-window" v-if="!modalNextFlag">
           <p>Modal1</p>
 
           <div class="button-wrap">
-            <a href="#" @click.prevent="closeModal" class="button-secondary">Close</a>
-            <a href="#" @click.prevent="nextModal" class="button-primary">Next</a>
+            <button type="button" @click="closeModal" class="button-secondary">Close</button>
+            <button type="button" @click="nextModal" class="button-primary">Next</button>
           </div>
         </div>
-        <div class="modal-window" v-else-if="modalNextContentFlag">
+        <div class="modal-window" v-else-if="modalNextFlag">
           <p>Modal2</p>
 
           <div class="button-wrap">
-            <a href="#" @click.prevent="prevModal" class="button-secondary">Prev</a>
-            <router-link to="/" class="button-primary">Complete</router-link>
+            <button type="button" @click="prevModal" class="button-secondary">Prev</button>
+            <button type="button" class="button-primary" @click="closeModal">Complete</button>
           </div>
         </div>
       </transition>
@@ -30,29 +30,59 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
-  data () {
-    return {
-      modalNextContentFlag: false
-    }
-  },
   computed: {
-    ...mapGetters(['modalFlag'])
+    ...mapGetters([
+      'modalFlag',
+      'modalNextFlag'
+    ])
   },
   methods: {
+    ...mapActions([
+      'updateModalFlag',
+      'updateModalNextFlag'
+    ]),
     openModal () {
-      this.$store.dispatch('updateModalFlag', true)
+      this.updateModalFlag(true)
+      this.controlTabindex()
     },
     closeModal () {
-      this.$store.dispatch('updateModalFlag', false)
+      this.updateModalFlag(false)
+      this.controlTabindex()
     },
     nextModal () {
-      this.modalNextContentFlag = true
+      this.updateModalNextFlag(true)
     },
     prevModal () {
-      this.modalNextContentFlag = false
+      this.updateModalNextFlag(false)
+    },
+    controlTabindex () {
+      const content = document.getElementById('app')
+      const a = content.getElementsByTagName('a')
+      const button = content.getElementsByTagName('button')
+      let [i, j] = [0, 0]
+      const buttonLength = button.length
+      const aLength = a.length
+
+      if (this.modalFlag) {
+        for (i; i < aLength; i++) {
+          a[i].setAttribute('tabindex', -1)
+        }
+
+        for (j; j < buttonLength; j++) {
+          button[j].setAttribute('tabindex', -1)
+        }
+      } else if (!this.modalFlag) {
+        for (i; i < aLength; i++) {
+          a[i].removeAttribute('tabindex')
+        }
+
+        for (j; j < buttonLength; j++) {
+          button[j].removeAttribute('tabindex')
+        }
+      }
     }
   }
 }
