@@ -62,16 +62,34 @@ const sort = {
         price: 2000
       }
     ],
+    sortIconFlag: {
+      date: false,
+      text: false,
+      price: false
+    },
     order: false
   },
   getters: {
     list: (state) => state.list,
+    sortIconFlag: (state) => state.sortIconFlag,
     order: (state) => state.order
   },
   mutations: {
     sorted (state, payload) {
       state.order = !state.order
       state.list = _.orderBy(state.list, payload, state.order ? 'desc' : 'asc') // eslint-disable-line
+
+      const sortKeys = Object.keys(state.sortIconFlag)
+      const sortKeysLength = sortKeys.length
+      let i = 0
+
+      state.sortIconFlag[payload] = !state.sortIconFlag[payload]
+
+      for (i; i < sortKeysLength; i++) {
+        if (sortKeys[i] !== payload) {
+          state.sortIconFlag[sortKeys[i]] = false
+        }
+      }
     }
   },
   actions: {

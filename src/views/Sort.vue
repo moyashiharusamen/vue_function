@@ -8,18 +8,21 @@
           <th
             @click="sorted('date')"
             @keyup.enter.space="sorted('date')"
+            :class="[ sortIconFlag.date ? 'asc' : 'desc' ]"
             tabindex="0"
-          >Date</th>
+          ><span>Date<span class="icon">{{ sortButtonText('date') }}</span></span></th>
           <th
             @click="sorted('text')"
             @keyup.enter.space="sorted('text')"
+            :class="[ sortIconFlag.text ? 'asc' : 'desc' ]"
             tabindex="0"
-          >Text</th>
+          ><span>Text<span class="icon">{{ sortButtonText('text') }}</span></span></th>
           <th
             @click="sorted('price')"
             @keyup.enter.space="sorted('price')"
+            :class="[ sortIconFlag.price ? 'asc' : 'desc' ]"
             tabindex="0"
-          >Price</th>
+          ><span>Price<span class="icon">{{ sortButtonText('price') }}</span></span></th>
         </tr>
       </thead>
 
@@ -45,10 +48,18 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['list'])
+    ...mapGetters([
+      'list',
+      'sortIconFlag'
+    ])
   },
   methods: {
-    ...mapActions(['sorted'])
+    ...mapActions([
+      'sorted'
+    ]),
+    sortButtonText (key) {
+      return this.sortIconFlag[key] ? '昇順' : '降順'
+    }
   }
 }
 </script>
@@ -76,22 +87,39 @@ export default {
         font-weight: normal;
         cursor: pointer;
 
+        > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+
+        .icon {
+          width: 10px;
+          height: 14px;
+          margin-left: 10px;
+          font-size: 0;
+          color: transparent;
+
+          &:after {
+            content: "▼";
+            display: block;
+            font-size: 12px;
+            color: #fff;
+          }
+        }
+
+        &.asc {
+          .icon {
+            &:after {
+              content: "▲";
+            }
+          }
+        }
+
         &:hover,
         &:focus {
           opacity: .8;
-        }
-
-        &:after {
-          content: "▼";
-          display: block;
-          margin-left: 10px;
-          font-size: 10px;
-        }
-
-        &.desc {
-          &:after {
-            content: "▲";
-          }
         }
       }
     }
