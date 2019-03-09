@@ -1,15 +1,10 @@
-.content-enter-active {
-  transition: .5s;
-}
-
+.content-enter-active,
 .content-leave-active {
-//
+  transition: opacity .5s ease;
 }
-
 .content-enter {
   opacity: 0;
 }
-
-.content-leave-to {
-  //opacity: 0;
+.content-leave-active {
+  display: none;
 }
