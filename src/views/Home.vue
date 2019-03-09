@@ -47,13 +47,13 @@ export default {
   }
 }
 
-ul {
-  margin-top: 10px;
+.list {
+  margin-top: 30px;
   padding: 0 0 0 20px;
 
   > li {
     &:not(:first-of-type) {
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     > a {

@@ -47,12 +47,15 @@ export default {
         &:not(:first-of-type) {
           margin-left: 20px;
         }
+
+        > a {
+          font-size: 18px;
+        }
       }
     }
   }
 
   a {
-    /*color: #80CBC4;*/
     color: #F9FBE7;
   }
 }
