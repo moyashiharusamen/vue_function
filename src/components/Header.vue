@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  padding: 5px 0 10px;
+  padding: 20px 0;
   background: #036;
   border-bottom: 1px solid #333;
 
@@ -34,11 +34,13 @@ export default {
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 32px;
     color: #F9FBE7;
   }
 
   nav {
+    margin: 0;
+
     > ul {
       display: flex;
       justify-content: center;
