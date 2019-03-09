@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>Modal</h1>
+  <h1><span v-for="(words, index) in text" :key="index" v-text="words" class="item delay-animation"/></h1>
 
   <button type="button" class="button-primary" @click="openModal">Open</button>
 
@@ -33,6 +33,11 @@
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
+  data () {
+    return {
+      text: 'Modal'
+    }
+  },
   computed: {
     ...mapGetters([
       'modalFlag',

@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-  <h1 class="delay-text">
+  <h1>
     <span v-for="(words, index) in text" :key="index" v-text="words" class="item delay-animation"/>
   </h1>
 
@@ -36,7 +36,6 @@ export default {
     }
 
     > a {
-      display: block;
       position: relative;
       padding-left: 20px;
       font-size: 18px;

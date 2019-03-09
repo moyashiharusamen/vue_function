@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Sort</h1>
+    <h1><span v-for="(words, index) in text" :key="index" v-text="words" class="item delay-animation"/></h1>
 
     <table class="sort-table">
       <thead>
@@ -40,6 +40,7 @@ import {mapGetters, mapActions} from 'vuex'
 export default {
   data () {
     return {
+      text: 'Sort',
       numberSortFlag: 'asc'
     }
   },
