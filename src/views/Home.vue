@@ -26,27 +26,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-@keyframes text-in {
-  0% {
-    transform: translate(0, -20px);
-    opacity: 0;
-  }
-}
-
-.item {
-  display: inline-block;
-  min-width: 0.3em;
-  font-size: 2rem;
-  animation: text-in .3s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
-}
-
-@for $i from 0 through 14 {
-  .delay-animation:nth-child(#{$i + 1}) {
-    animation-delay: calc(#{$i} * 100ms + 200ms);
-  }
-}
-
 .list {
   margin-top: 30px;
   padding: 0 0 0 20px;
