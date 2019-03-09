@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import 'normalize.css'
 import TheHeader from '@/components/Header'
+import './assets/css/normalize.css'
 import './assets/scss/reset.scss'
 import './assets/scss/heading.scss'
 import './assets/scss/transition.scss'
