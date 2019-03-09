@@ -5,12 +5,9 @@
   </h1>
 
   <ul class="list">
-    <li>
-      <router-link to="/modal">Modal</router-link>
-    </li>
-    <li>
-      <router-link to="/sort">Sort</router-link>
-    </li>
+    <li><router-link to="/modal">Modal</router-link></li>
+    <li><router-link to="/sort">Sort</router-link></li>
+    <li><router-link to="/graph">Graph</router-link></li>
   </ul>
 </div>
 </template>
