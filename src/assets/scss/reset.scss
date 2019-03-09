@@ -33,7 +33,8 @@ button {
   cursor: pointer;
   transition: .3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: .7;
   }
 }
