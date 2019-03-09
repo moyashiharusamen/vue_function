@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Modal from '@/views/Modal'
 import Sort from '@/views/Sort'
+import Graph from '@/views/Graph'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/sort',
       name: 'sort',
       component: Sort
+    },
+    {
+      path: '/graph',
+      name: 'graph',
+      component: Graph
     }
   ]
 })

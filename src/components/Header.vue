@@ -7,6 +7,7 @@
         <ul>
           <li><router-link to="/modal">modal</router-link></li>
           <li><router-link to="/sort">sort</router-link></li>
+          <li><router-link to="/graph">graph</router-link></li>
         </ul>
       </nav>
     </div>
