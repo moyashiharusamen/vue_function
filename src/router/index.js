@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Modal from '@/views/Modal'
 import Sort from '@/views/Sort'
 import Graph from '@/views/Graph'
+import Graph2 from '@/views/Graph2'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/graph',
       name: 'graph',
       component: Graph
+    },
+    {
+      path: '/graph2',
+      name: 'graph2',
+      component: Graph2
     }
   ]
 })

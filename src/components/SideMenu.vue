@@ -7,6 +7,7 @@
       <li><router-link to="/">モーダル</router-link></li>
       <li><router-link to="/sort">ソート</router-link></li>
       <li><router-link to="/graph">グラフ</router-link></li>
+      <li><router-link to="/graph2">グラフ2</router-link></li>
     </ul>
   </nav>
 </aside>
@@ -23,6 +24,7 @@ export default {
   width: 300px;
   padding: 20px 0;
   border-right: 1px solid #333;
+  overflow-y: auto;
   position: fixed;
   top: 77px;
   left: 0;

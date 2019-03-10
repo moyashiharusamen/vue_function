@@ -34,9 +34,11 @@ button {
   cursor: pointer;
   transition: .3s;
 
-  &:hover,
-  &:focus {
-    opacity: .7;
+  &:not([disabled="disabled"]) {
+    &:hover,
+    &:focus {
+      opacity: .7;
+    }
   }
 }
 
