@@ -6,6 +6,7 @@ import Sort from '@/views/Sort'
 import Graph from '@/views/Graph'
 import Graph2 from '@/views/Graph2'
 import PostalCode from '@/views/PostalCode'
+import Tab from '@/views/Tab'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/postal-code',
       name: 'postal-code',
       component: PostalCode
+    },
+    {
+      path: '/tab',
+      name: 'tab',
+      component: Tab
     }
   ]
 })
