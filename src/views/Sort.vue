@@ -82,7 +82,7 @@ export default {
         justify-content: center;
         width: calc(100% / 3);
         padding: 20px 10px 18px;
-        background: #1f8fff;
+        background: #036;
         font-size: 20px;
         font-weight: normal;
         cursor: pointer;
