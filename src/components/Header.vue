@@ -17,6 +17,8 @@ export default {
   padding: 20px 0;
   background: #036;
   border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
 
   .header-inner {
     display: flex;
