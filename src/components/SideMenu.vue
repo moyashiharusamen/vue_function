@@ -8,6 +8,7 @@
       <li><router-link to="/sort">ソート</router-link></li>
       <li><router-link to="/graph">グラフ</router-link></li>
       <li><router-link to="/graph2">グラフ2</router-link></li>
+      <li><router-link to="/postal-code">検索</router-link></li>
     </ul>
   </nav>
 </aside>

@@ -5,6 +5,7 @@ import Modal from '@/views/Modal'
 import Sort from '@/views/Sort'
 import Graph from '@/views/Graph'
 import Graph2 from '@/views/Graph2'
+import PostalCode from '@/views/PostalCode'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/graph2',
       name: 'graph2',
       component: Graph2
+    },
+    {
+      path: '/postal-code',
+      name: 'postal-code',
+      component: PostalCode
     }
   ]
 })
