@@ -1,5 +1,9 @@
 <template>
   <div>
+    <h1>
+      <span v-for="(words, index) in text" :key="index" v-text="words" class="item delay-animation"></span>
+    </h1>
+
     <h2>郵便番号から住所を検索</h2>
 
     <div class="search-element">
@@ -26,6 +30,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
+      text: 'Search',
       inputValue: '',
       address: '',
       erroredNumber: false,
