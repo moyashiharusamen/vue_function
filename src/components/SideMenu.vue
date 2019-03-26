@@ -10,6 +10,7 @@
       <li><router-link to="/graph2">グラフ2</router-link></li>
       <li><router-link to="/postal-code">検索</router-link></li>
       <li><router-link to="/tab">タブ</router-link></li>
+      <li><router-link to="/add-list">リスト追加</router-link></li>
     </ul>
   </nav>
 </aside>

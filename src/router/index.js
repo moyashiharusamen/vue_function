@@ -7,6 +7,7 @@ import Graph from '@/views/Graph'
 import Graph2 from '@/views/Graph2'
 import PostalCode from '@/views/PostalCode'
 import Tab from '@/views/Tab'
+import AddList from '@/views/AddList'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/tab',
       name: 'tab',
       component: Tab
+    },
+    {
+      path: '/add-list',
+      name: 'add-list',
+      component: AddList
     }
   ]
 })

@@ -49,3 +49,60 @@ button[disabled="disabled"] {
     left: 0;
   }
 }
+
+.add-button {
+  min-width: 180px;
+  padding: 8px 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #036;
+  position: relative;
+
+  &:hover:not([disabled]) {
+    opacity: .7;
+  }
+
+  &[disabled="disabled"] {
+    background: #b5b5b5;
+    cursor: default;
+
+    &:hover {
+      background: #b5b5b5;
+      color: #fff;
+
+      > span {
+        &:before,
+        &:after {
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  > span {
+    padding-left: 24px;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      background: #fff;
+      position: absolute;
+      left: 0;
+    }
+
+    &:before {
+      width: 15px;
+      height: 1px;
+      top: 11px;
+    }
+
+    &:after {
+      width: 1px;
+      height: 15px;
+      top: 4px;
+      left: 7px;
+    }
+  }
+}
