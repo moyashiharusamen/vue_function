@@ -16,7 +16,7 @@
 
       <transition name="text">
         <p v-if="erroredLoad" key="load" :class="{ errorText: erroredLoad }">存在しない郵便番号です</p>
-        <p v-else-if="erroredNumber" key="number" :class="{ errorText: erroredNumber }">7文字の数字を入力してください</p>
+        <p v-else-if="erroredNumber" key="number" :class="{ errorText: erroredNumber }">7桁の数字を入力してください</p>
         <p v-else-if="address" key="result" class="result">{{ address.prefecture_name }}{{ address.city_name }}{{
           address.town_name }}</p>
       </transition>
